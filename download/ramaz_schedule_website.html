@@ -1,0 +1,173 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+  <title>Ramaz Schedule</title>
+  <link rel="SHORTCUT ICON" HREF="/Favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+  <script>
+checkCookie()
+ function setCookie(cname,cvalue,exdays)
+ {
+ var d = new Date();
+ d.setTime(d.getTime()+(exdays*24*60*60*1000));
+ var expires = "expires="+d.toGMTString();
+ document.cookie = cname+"="+cvalue+"; "+expires;
+ }
+
+ function getCookie(cname)
+ {
+ var name = cname + "=";
+ var ca = document.cookie.split(';');
+ for(var i=0; i<ca.length; i++) 
+   {
+   var c = ca[i].trim();
+   if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+   }
+ return "";
+ }
+
+ function checkCookie()
+ {
+ var user=getCookie("username");
+ if (user!="")
+   {
+   return(user);
+   }
+ else 
+   {
+  window.location.assign("http://ramazschedule.neocities.org/login_ramaz_schedule.html");
+   if (user!="" && user!=null)
+     {
+     setCookie("username",user,30);
+     }
+   }
+ }
+ </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46773715-1', 'neocities.org');
+  ga('send', 'pageview');
+
+</script>
+</head> 
+
+<body onload="checkCookie()"> 
+
+<style> 
+  #select-choice-1-button {float: left;}
+  #select-choice-2-button {float:right;}
+  .ui-header .ui-title {margin-left: auto; margin-right: auto;}  
+</style>
+
+<div data-role="page">
+<div data-role="header">
+  <a href="javascript:void(0)" onclick='document.cookie = "username=; expires=Thu, 01 Jan 2000 00:00:00 GMT"; checkCookie();'>Log out</a>
+  <!-- <a href="http://ramazschedule.neocities.org/help_ramaz_schedule.html">Help</a>-->
+<select name="forma" id="select-choice-2"  data-native-menu="false" onchange="location = this.options[this.selectedIndex].value;">
+    <option value="">More</option>
+    <option value="http://ramazschedule.neocities.org/help_ramaz_schedule.html">Help</option>
+    <option value="http://ramazschedule.neocities.org/info_ramaz_schedule.html">Info</option>
+  </select>
+                
+    <h2>Ramaz Schedule</h2>
+     
+  </div>
+  
+
+<input type="button"  value="This week's Schedule" onclick= 'window.location.href = dic[current_sunday].replace("replace",checkCookie())' />  <!--data-inline="true" will get them side by side, put it in each one--> 
+<input type="button"  value="Next week's Schedule" onclick= 'window.location.href = dic[next_sunday].replace("replace",checkCookie())' />
+
+
+
+
+
+<script>
+var dic =  {'8/25/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=08%2F25%2F2013', '9/8/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=09%2F08%2F2013', '9/15/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=09%2F15%2F2013', '9/22/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=09%2F22%2F2013', '9/29/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=09%2F29%2F2013', '10/6/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=10%2F06%2F2013', '10/13/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=10%2F13%2F2013', '10/20/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=10%2F20%2F2013', '11/3/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=11%2F03%2F2013', '11/10/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=11%2F10%2F2013', '11/17/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=11%2F17%2F2013', '11/24/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=11%2F24%2F2013', '12/1/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=12%2F01%2F2013', '12/8/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=12%2F08%2F2013', '12/15/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=12%2F15%2F2013', '12/29/2013': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=12%2F29%2F2013', '1/5/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=01%2F05%2F2014', '1/12/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=01%2F12%2F2014', '1/19/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=01%2F19%2F2014', '1/26/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=01%2F26%2F2014', '2/2/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=02%2F02%2F2014', '2/9/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=02%2F09%2F2014', '2/16/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=02%2F16%2F2014', '2/23/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=02%2F23%2F2014', '3/2/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=03%2F02%2F2014', '3/9/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=03%2F09%2F2014', '3/16/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=03%2F16%2F2014', '3/23/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=03%2F23%2F2014', '3/30/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=03%2F30%2F2014', '4/6/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=04%2F06%2F2014', '4/13/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=04%2F13%2F2014', '4/20/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=04%2F20%2F2014', '4/27/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=04%2F27%2F2014', '5/4/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=05%2F04%2F2014', '5/11/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=05%2F11%2F2014', '5/18/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=05%2F18%2F2014', '5/25/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=05%2F25%2F2014', '6/1/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=06%2F01%2F2014', '6/8/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=06%2F08%2F2014', '6/15/2014': 'http://www.ramaz.org/course/view_weekly_planner.cfm?id_student=replace&date_from=06%2F15%2F2014'}; 
+  
+</script>
+
+    <!--<h4>Enter the date of the first day of the week (mm/dd/year)</h4>-->
+ 
+
+<div id="container">
+    <input type="text" placeholder="Enter the date of a Sunday in (m/d/year) format, no leading zeros." id="input"/>
+    <button id="trigger">Search</button>
+</div>
+<select id="dataPicker">
+</select>
+<script>
+
+checkCookie()
+
+var trigger = document.getElementById("trigger");
+trigger.addEventListener("click",
+    function () {
+    var input = document.getElementById("input");
+    var not_changed_link = dic[input.value]
+    var changed_link = not_changed_link.replace("replace",checkCookie());
+    window.location.href = changed_link; //why did I make  this .value?
+}, false); // search bar
+
+$(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  
+var opt;
+var dataPicker = document.getElementById("dataPicker");
+dataPicker.addEventListener("change", function (){
+    for (var i = 0, len = dataPicker.length; i < len; ++i) {
+        if (dataPicker.options[i].selected) {
+            var not_changed_link = dataPicker.options[i].value
+            var changed_link = not_changed_link.replace("replace",checkCookie());
+            window.location.href = changed_link;
+        }
+    }
+}, false);
+for (key in dic) {
+    opt = document.createElement("option");
+    opt.value = dic[key];
+    opt.innerHTML = key;
+    dataPicker.appendChild(opt);
+}
+
+
+
+var currentTime = new Date();
+currentTime.setDate(currentTime.getDate() - currentTime.getDay());
+var month = currentTime.getMonth() + 1;
+var day = currentTime.getDate();
+var year = currentTime.getFullYear();
+document.write(month + "/" + day + "/" + year + ' is the date of the most recent Sunday.');
+
+var month =JSON.stringify(month)
+var year =JSON.stringify(year)
+var day =JSON.stringify(day)
+
+var current_sunday= (month + "/" + day + "/" + year);
+var currentTime = new Date();
+currentTime.setDate(currentTime.getDate() + 7 -  currentTime.getDay());
+var monthN = currentTime.getMonth() + 1;
+var dayN = currentTime.getDate();
+var yearN = currentTime.getFullYear();
+
+var next_sunday = (monthN + "/" + dayN + "/" + yearN)
+
+</script>
+<!--<form action=http://ramazschedule.neocities.org/Sked0114.pdf>
+    <input type="submit" value="Midterm Schedule">
+</form>-->
+<hr size="2" width="100%" noshade style="color:#000000" align="left" />
+<a href="http://www.ramazhelp.com">Ramazhelp.com</a>
+<br>
+<a href="http://catchyurl.co">Catchyurl.co</a>
+
+</div>
+</body>
+</html>
